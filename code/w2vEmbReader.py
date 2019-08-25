@@ -4,7 +4,7 @@ import numpy as np
 import gensim
 from sklearn.cluster import KMeans
 import pickle  
-
+import pudb
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(message)s')
@@ -20,6 +20,7 @@ class W2VEmbReader:
        
         model = gensim.models.Word2Vec.load(emb_path)
         self.emb_dim = emb_dim
+        pu.db
         for word in model.vocab:
             self.embeddings[word] = list(model[word])
             emb_matrix.append(list(model[word]))
