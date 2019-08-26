@@ -20,9 +20,11 @@ def preprocess_train(domain):
     # out = codecs.open('../preprocessed_data/'+domain+'/train.txt', 'w', 'utf-8')
 
     for line in f_label:
-        tokens = parseSentence(line)
-        if len(tokens) > 0:
-            out_label.write(' '.join(tokens)+'\n')
+        token_list = line.split(",")
+        for tokens in token_list:
+            tokens = parseSentence(line)
+            if len(tokens) > 0:
+                out_label.write(' '.join(tokens)+'\n')
 
     for line in f_raw:
         tokens = parseSentence(line)
